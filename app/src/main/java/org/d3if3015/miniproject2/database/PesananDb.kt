@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import org.d3if3015.miniproject2.model.Pesanan
 
-@Database(entities = [Pesanan::class], version = 1, exportSchema = false)
+@Database(entities = [Pesanan::class], version = 2, exportSchema = false)
 abstract class PesananDb : RoomDatabase() {
     abstract val dao: PesananDao
 
@@ -22,7 +22,7 @@ abstract class PesananDb : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         PesananDb::class.java,
-                        "catatan.db"
+                        "pesanan.db"
                     ).build()
                     INSTANCE = instance
                 }

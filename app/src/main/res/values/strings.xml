@@ -2,5 +2,17 @@
     <string name="app_name">Kopi KirSendiri</string>
     <string name="list_kosong">Belum ada data</string>
     <string name="tambah_pesanan">Tambah pesanan</string>
+    <string name="edit_pesanan">Edit pesanan</string>
     <string name="kembali">Kembali</string>
+    <string name="nama">Nama pemesan</string>
+    <string name="isi_pesanan">Isi Pesanan</string>
+    <string name="invalid">nama dan isi pesanan tidak boleh kosong</string>
+    <string name="simpan">Simpan</string>
+    <string name="lainnya">Opsi lainnya</string>
+    <string name="hapus">Hapus data</string>
+    <string name="pesan_hapus">Hapus data ini?</string>
+    <string name="tombol_hapus">Hapus</string>
+    <string name="tombol_batal">Batal</string>
+    <string name="grid">Tampilan grid</string>
+    <string name="list">Tampilan list</string>
 </resources>

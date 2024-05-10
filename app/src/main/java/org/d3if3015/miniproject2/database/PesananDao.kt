@@ -15,12 +15,12 @@ interface PesananDao {
     @Update
     suspend fun update(pesanan: Pesanan)
 
-    @Query("SELECT * FROM pesanan ORDER BY tanggal DESC")
+    @Query("SELECT * FROM daftar_pesanan ORDER BY tanggal DESC")
     fun getPesanan(): Flow<List<Pesanan>>
 
-    @Query("SELECT * FROM pesanan WHERE id = :id")
+    @Query("SELECT * FROM daftar_pesanan WHERE id = :id")
     suspend fun getPesananById(id:Long): Pesanan
 
-    @Query("DELETE FROM pesanan WHERE id = :id")
+    @Query("DELETE FROM daftar_pesanan WHERE id = :id")
     suspend fun deleteById(id: Long)
 }
