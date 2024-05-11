@@ -2,13 +2,17 @@ package org.d3if3015.miniproject2.ui.screen
 
 import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
@@ -126,6 +130,12 @@ fun ScreenContent(showList: Boolean,modifier: Modifier, navController: NavHostCo
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Image(
+                painter = painterResource(id = R.drawable.spongebob),
+                contentDescription = "Empty List Image",
+                modifier = Modifier.size(100.dp)
+            )
+            Spacer(modifier = Modifier.height(16.dp))
             Text(text = stringResource(id = R.string.list_kosong))
         }
     } else {
@@ -168,7 +178,7 @@ fun ListItem(pesanan: Pesanan, onClick: () -> Unit){
             .fillMaxWidth()
             .clickable { onClick() }
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ){
         Text(
             text = pesanan.nama,
@@ -197,7 +207,7 @@ fun GridItem(pesanan: Pesanan, onClick: () -> Unit) {
             .fillMaxWidth()
             .clickable { onClick() },
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
+            containerColor = MaterialTheme.colorScheme.secondary
         ),
         border = BorderStroke(1.dp, Color.Gray)
     ) {
@@ -213,12 +223,12 @@ fun GridItem(pesanan: Pesanan, onClick: () -> Unit) {
             )
             Text(
                 text = pesanan.pesananMakanan,
-                maxLines = 2,
+                maxLines = 7,
                 overflow = TextOverflow.Ellipsis
             )
             Text(
                 text = pesanan.pesananMinuman,
-                maxLines = 2,
+                maxLines = 7,
                 overflow = TextOverflow.Ellipsis
             )
             Text(text = pesanan.tanggal)
